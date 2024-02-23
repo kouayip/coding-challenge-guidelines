@@ -14,7 +14,7 @@ Additionally, the application implements event emitters to dispatch events based
 
 - Chart.js: Utilized for its simplicity in creating customizable and responsive charts. The punch card visualizations provide a clear and intuitive representation of the data.
 
-- Observable Pattern: Implemented using custom hooks (useEventSource) to manage data flow and event subscriptions. This pattern ensures efficient updates to the punch card visualizations, reducing unnecessary re-renders.
+- Observable Pattern: Use to manage data flow and event subscriptions. This pattern ensures efficient updates to the punch card visualizations, reducing unnecessary re-renders.
 
 - Event Emitters: Event emitters dispatch events based on their type, allowing components to subscribe and react to specific event types.
 
