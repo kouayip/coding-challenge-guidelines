@@ -1,28 +1,26 @@
-import React, { useEffect, useRef } from "react";
-import { Chart, ChartData } from "chart.js/auto";
-import { TestProps } from "../Common/TestProps.ts";
+import React, { useEffect, useRef } from 'react'
+import { Chart } from 'chart.js/auto'
 
-type BubbleChartProps = {
-  xLabel: string[];
-  yLabels: string[];
-  data: ChartData<"bubble">;
-} & TestProps;
+import { BubbleChartProps } from './BubbleChart.types.ts'
 
+/**
+ * A reusable component for bubble charts
+ */
 const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
   testId,
   ...options
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const canvasOptionRef = useRef(options);
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasOptionRef = useRef(options)
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current) return
 
-    const { xLabel, yLabels } = canvasOptionRef.current;
+    const { xLabel, yLabels } = canvasOptionRef.current
 
     const chart = new Chart(canvasRef.current, {
-      type: "bubble",
+      type: 'bubble',
       data,
       options: {
         animation: false,
@@ -33,11 +31,11 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
             max: xLabel.length - 1,
             ticks: {
               stepSize: 1,
-              callback: (value) => xLabel[value as number], // Utilisez les labels personnalisés
+              callback: value => xLabel[value as number], // Use custom labels for the Y axis
             },
             offset: true,
             grid: {
-              display: false, // Masquer la grille de l'axe X
+              display: false, // Hide the X axis grid
             },
           },
           y: {
@@ -45,23 +43,23 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
             max: yLabels.length - 1,
             ticks: {
               stepSize: 1,
-              callback: (value) => yLabels[value as number], // Utilisez les labels personnalisés
+              callback: value => yLabels[value as number], // Use custom labels for the X axis
             },
             offset: true,
             grid: {
-              display: false, // Masquer la grille de l'axe Y
+              display: false, // Hide the Y axis grid
             },
           },
         },
       },
-    });
+    })
 
     return () => {
-      chart.destroy();
-    };
-  }, [data]);
+      chart.destroy() // if the component is re-rendered, destroy chart instance
+    }
+  }, [data])
 
-  return <canvas data-testid={testId} ref={canvasRef} />;
-};
+  return <canvas data-testid={testId} ref={canvasRef} />
+}
 
-export default BubbleChart;
+export default BubbleChart
