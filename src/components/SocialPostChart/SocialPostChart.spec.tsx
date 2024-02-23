@@ -4,7 +4,7 @@ import SocialPostChart from './SocialPostChart'
 
 describe('SocialPostChart component', () => {
   it('renders with initial post count and chart', () => {
-    render(<SocialPostChart socialType="Twitter" />)
+    render(<SocialPostChart type="Twitter" />)
 
     const socialCardElement = screen.getByTestId('social-post-chart-Twitter')
     expect(socialCardElement).toBeInTheDocument()
