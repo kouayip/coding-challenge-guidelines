@@ -16,7 +16,7 @@ const socials = [
 
 const SocialPage = () => (
   <SocialPostStreamProvider options={{ url: config.socialStreamUrl }}>
-    <div className="app-container">
+    <div className="social-wrapper">
       {socials.map(social => (
         <SocialPostChart key={social} type={social} />
       ))}
