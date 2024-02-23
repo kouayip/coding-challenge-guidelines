@@ -1,0 +1,25 @@
+@min768: ~"(min-width: 768px)";   /* Media query for mobile devices and tablets */
+
+
+#root {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  padding: 24px;
+  aspect-ratio: 2;
+
+
+  @media @min768 {
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+

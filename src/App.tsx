@@ -1,10 +1,11 @@
 import React from 'react'
 import AppProvider from './providers/AppProvider'
+import SocialPage from './pages/social/SocialPage'
 
 function App() {
   return (
     <AppProvider>
-      <h1>Coding Challenge Guidelines</h1>
+      <SocialPage />
     </AppProvider>
   )
 }

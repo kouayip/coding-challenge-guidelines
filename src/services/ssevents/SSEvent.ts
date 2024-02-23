@@ -41,7 +41,7 @@ export abstract class SSEvent extends EventEmitter {
       this.emit('open', event)
 
       // Event handler definition for received messages
-      eventSource.onmessage = this.handleMessageReceived
+      eventSource.onmessage = this.handleMessageReceived.bind(this)
 
       // Error handler definition for the EventSource
       eventSource.onerror = event => {
