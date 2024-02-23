@@ -1,4 +1,5 @@
 # Coding Challenge Guidelines
+
 This application is a front-end solution for visualizing social media posts in a 3-dimensional punch card system. It consumes a real-time streaming API endpoint provided by Upfluence to display the distribution of social media posts based on the day of the week, hour of the day, and the number of posts.
 
 ## Solution Description
@@ -8,13 +9,14 @@ The application utilizes React.js for the front-end framework, allowing for effi
 Additionally, the application implements event emitters to dispatch events based on their type. This allows for the creation of observables that subscribe to a specific type of event, ensuring that only relevant notifications are received. This guarantees that the visualization of a punch card updates only if it receives an event of the same type to which it subscribed initially, thus avoiding unnecessary re-rendering.
 
 ## Technical Choices
-* React.js: Chosen for its component-based architecture, allowing for the creation of reusable and modular UI elements.
 
-* Chart.js: Utilized for its simplicity in creating customizable and responsive charts. The punch card visualizations provide a clear and intuitive representation of the data.
+- React.js: Chosen for its component-based architecture, allowing for the creation of reusable and modular UI elements.
 
-* Observable Pattern: Implemented using custom hooks (useEventSource) to manage data flow and event subscriptions. This pattern ensures efficient updates to the punch card visualizations, reducing unnecessary re-renders.
+- Chart.js: Utilized for its simplicity in creating customizable and responsive charts. The punch card visualizations provide a clear and intuitive representation of the data.
 
-* Event Emitters: Event emitters dispatch events based on their type, allowing components to subscribe and react to specific event types.
+- Observable Pattern: Implemented using custom hooks (useEventSource) to manage data flow and event subscriptions. This pattern ensures efficient updates to the punch card visualizations, reducing unnecessary re-renders.
+
+- Event Emitters: Event emitters dispatch events based on their type, allowing components to subscribe and react to specific event types.
 
 ## Trade-offs and future improvements
 
@@ -89,6 +91,7 @@ $ yarn run test:cov
 ---
 
 ## Additional Notes
+
 The application is designed to be responsive and should work well on various screen sizes.
 
 Please ensure that you have a stable internet connection to receive real-time updates from the streaming API.

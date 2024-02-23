@@ -4,6 +4,26 @@ import SocialPostChart from './SocialPostChart'
 import { SocialPostStreamProvider } from '../../providers/SocialPostStreamProvider.tsx'
 
 describe('SocialPostChart component', () => {
+  beforeEach(() => {
+    // Create a mock EventSource
+    const eventSourceMock = {
+      addEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+      close: jest.fn(),
+      open: jest.fn(),
+    }
+
+    // Assign the mock to the global object
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    global.EventSource = jest.fn(() => eventSourceMock)
+  })
+
+  afterEach(() => {
+    // Reset the mock
+    jest.clearAllMocks()
+  })
+
   it('renders with initial post count and chart', () => {
     render(
       <SocialPostStreamProvider

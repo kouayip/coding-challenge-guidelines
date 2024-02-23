@@ -1,5 +1,3 @@
-@min768: ~"(min-width: 768px)";   /* Media query for mobile devices and tablets */
-
 .social-wrapper {
   display: grid;
   grid-gap: 20px;
@@ -7,10 +5,8 @@
   padding: 24px;
   aspect-ratio: 2;
 
-
-  @media @min768 {
+  /* Media query for mobile devices and tablets */
+  @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
-
   }
 }
-
