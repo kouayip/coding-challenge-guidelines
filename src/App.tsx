@@ -1,7 +1,12 @@
 import React from 'react'
+import AppProvider from './providers/AppProvider'
 
 function App() {
-  return <h1>Coding Challenge Guidelines</h1>
+  return (
+    <AppProvider>
+      <h1>Coding Challenge Guidelines</h1>
+    </AppProvider>
+  )
 }
 
 export default App
