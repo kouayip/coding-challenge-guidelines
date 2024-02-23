@@ -81,7 +81,7 @@ const SocialPostChart: React.FC<SocialPostChartProps> = ({ type }) => {
       <p>Number of posts processed: {postCount}</p>
       <BubbleChart
         yLabels={yLabels}
-        xLabel={xLabel}
+        xLabels={xLabel}
         data={{
           datasets: [
             {

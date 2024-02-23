@@ -17,7 +17,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   useEffect(() => {
     if (!canvasRef.current) return
 
-    const { xLabel, yLabels } = canvasOptionRef.current
+    const { xLabels, yLabels } = canvasOptionRef.current
 
     const chart = new Chart(canvasRef.current, {
       type: 'bubble',
@@ -28,10 +28,10 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
         scales: {
           x: {
             min: 0,
-            max: xLabel.length - 1,
+            max: xLabels.length - 1,
             ticks: {
               stepSize: 1,
-              callback: value => xLabel[value as number], // Use custom labels for the Y axis
+              callback: value => xLabels[value as number], // Use custom labels for the Y axis
             },
             offset: true,
             grid: {
@@ -48,6 +48,16 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
             offset: true,
             grid: {
               display: false, // Hide the Y axis grid
+            },
+          },
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: tooltipItems => {
+                const { x, y, _custom } = tooltipItems.parsed
+                return `${yLabels[y]} at ${xLabels[x]}: ${_custom} posts`
+              },
             },
           },
         },

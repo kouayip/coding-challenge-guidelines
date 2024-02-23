@@ -8,7 +8,7 @@ export type BubbleChartProps = {
   /**
    * x-axis labels.
    */
-  xLabel: string[]
+  xLabels: string[]
 
   /**
    * Labels for the y-axis.
