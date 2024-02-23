@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:style": "stylelint '**/*.{css,less,scss,sass,tsx}'",
     "preview": "vite preview",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,scss,less,css,json,md,yml,yaml}\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,scss,css,json,md,yml,yaml}\"",
     "test": "jest",
     "test:cov": "jest --coverage",
     "cy:open-e2e": "cypress open --e2e --browser chrome",
@@ -21,7 +21,8 @@
   "dependencies": {
     "chart.js": "^4.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.12"
   },
   "devDependencies": {
     "@swc/core": "^1.4.2",

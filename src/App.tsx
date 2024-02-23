@@ -1,7 +1,13 @@
 import React from 'react'
+import AppProvider from './providers/AppProvider'
+import SocialPage from './pages/social/SocialPage'
 
 function App() {
-  return <h1>Coding Challenge Guidelines</h1>
+  return (
+    <AppProvider>
+      <SocialPage />
+    </AppProvider>
+  )
 }
 
 export default App
