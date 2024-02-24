@@ -58,7 +58,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
                 const { x, y, _custom } = tooltipItems.parsed
 
                 // format date to prefix meridian period
-                let time = xLabels[x].replace(/\b(am|pm)\b/g, '') + ' '
+                let time = xLabels[x].replace(/(am|pm)/, '') + ' '
                 time += x < Math.floor(xLabels.length / 2) ? 'AM' : 'PM'
 
                 return `${_custom} posts on ${yLabels[y]}. at ${time}` // ex: 10 posts on Monday at 1:00 AM
