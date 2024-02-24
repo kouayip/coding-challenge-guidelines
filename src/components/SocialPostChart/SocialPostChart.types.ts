@@ -1,4 +1,5 @@
 import { BubbleDataPoint } from 'chart.js'
+import { TestProps } from '../Common/TestProps.ts'
 
 export interface PostDataPoint extends BubbleDataPoint {
   /**
@@ -26,7 +27,7 @@ export interface PostPayload {
   timestamp: number
 }
 
-export interface SocialPostChartProps {
+export interface SocialPostChartProps extends TestProps {
   /**
    * type of social post
    */
