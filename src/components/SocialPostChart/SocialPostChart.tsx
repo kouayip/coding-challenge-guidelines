@@ -11,7 +11,7 @@ import { xLabel, yLabels } from './constants.ts'
 
 import './SocialPostChart.less'
 
-const SocialPostChart: React.FC<SocialPostChartProps> = ({ type }) => {
+const SocialPostChart: React.FC<SocialPostChartProps> = ({ type, testId }) => {
   const [data, setData] = useState<PostDataPoint[]>([])
   const [postCount, setPostCount] = useState(0)
 
@@ -77,7 +77,7 @@ const SocialPostChart: React.FC<SocialPostChartProps> = ({ type }) => {
   }, [stream, type])
 
   return (
-    <div data-testid={`social-post-chart-${type}`} className="social-card">
+    <div data-testid={testId} className="social-card">
       <p>Number of posts processed: {postCount}</p>
       <BubbleChart
         yLabels={yLabels}
