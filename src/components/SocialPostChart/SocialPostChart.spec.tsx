@@ -32,11 +32,11 @@ describe('SocialPostChart component', () => {
           autoConnect: false,
         }}
       >
-        <SocialPostChart type="Twitter" />
+        <SocialPostChart type="twitter" testId="social-post-chart-twitter" />
       </SocialPostStreamProvider>,
     )
 
-    const socialCardElement = screen.getByTestId('social-post-chart-Twitter')
+    const socialCardElement = screen.getByTestId('social-post-chart-twitter')
     expect(socialCardElement).toBeInTheDocument()
 
     // Vérifie si le texte initial du nombre de publications est rendu
