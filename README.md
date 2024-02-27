@@ -1,4 +1,4 @@
-# Coding Challenge Guidelines
+# Coding Challenge Social Posts Visualization
 
 This application is a front-end solution for visualizing social media posts in a 3-dimensional punch card system. It consumes a real-time streaming API endpoint provided by Upfluence to display the distribution of social media posts based on the day of the week, hour of the day, and the number of posts.
 
